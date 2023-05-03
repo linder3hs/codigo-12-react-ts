@@ -1,11 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-interface Comment {
-  text: string;
-  created_at: Date | string;
-  avatar: string;
-  username: string;
-}
+import type { Comment } from "../../../models/comment";
 
 export const commentSlice = createSlice({
   name: "comments",

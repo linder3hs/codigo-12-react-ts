@@ -30,17 +30,16 @@ export default function FormComment() {
 
   return (
     <>
-      <div className="bg-white m-6 rounded-md flex justify-center gap-10 p-6">
+      <div className="bg-white w-2/3 m-auto mb-12 rounded-md flex justify-center gap-10 p-6">
         <div>
           <img className="h-10" src={avatar} alt="" />
         </div>
-        <div>
+        <div className="grow">
           <textarea
             value={text}
             onChange={handleInputChange}
-            className="border resize-none py-2 px-5 rounded-md focus:outline-none"
+            className="border resize-none py-2 px-5 rounded-md w-full focus:outline-none"
             rows={5}
-            cols={30}
             placeholder="Add a comment..."
           ></textarea>
         </div>
