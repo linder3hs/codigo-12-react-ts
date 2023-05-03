@@ -26,7 +26,7 @@ export default function Comments() {
                   </button>
                 </div>
               </div>
-              <div className="flex flex-col gap-5 mb-8">
+              <div className="flex flex-col gap-5 mb-8 w-full">
                 <div className="flex justify-between">
                   <div className="flex gap-5">
                     <img src={avatar} className="h-5" alt="" />
