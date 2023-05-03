@@ -30,7 +30,7 @@ export default function FormComment() {
 
   return (
     <>
-      <div className="bg-white w-2/3 m-auto mb-12 rounded-md flex justify-center gap-10 p-6">
+      <div className="bg-white w-2/4 m-auto mb-12 rounded-md flex justify-center gap-10 p-6">
         <div>
           <img className="h-10" src={avatar} alt="" />
         </div>
@@ -46,7 +46,7 @@ export default function FormComment() {
         <div>
           <button
             onClick={handleSaveComment}
-            className="rounded-md bg-purple-500 py-2 px-6 text-white"
+            className="rounded-md bg-principal py-2 px-6 text-white"
           >
             Send
           </button>
