@@ -10,10 +10,10 @@ export default function Comments() {
     <div className="pb-10">
       {comments.length > 0 &&
         comments.map((comment: Comment, index: number) => (
-          <div key={comment.text} className="bg-white mt-10 p-6 rounded-md">
+          <div key={index} className="bg-white mt-10 p-6 rounded-md">
             <div className="flex gap-10">
               <PlusOrMinus counter={comment.counter} index={index} />
-              <Content comment={comment} />
+              <Content comment={comment} index={index} />
             </div>
           </div>
         ))}

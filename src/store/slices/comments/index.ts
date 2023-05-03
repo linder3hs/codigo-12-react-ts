@@ -24,11 +24,17 @@ export const commentSlice = createSlice({
       action: { payload: { index: number } }
     ) => {
       if (state.comments[action.payload.index].counter <= 0) return;
-      
+
       state.comments[action.payload.index].counter -= 1;
+    },
+    updateText: (
+      state: { comments: Comment[] },
+      action: { payload: { newText: string; index: number } }
+    ) => {
+      state.comments[action.payload.index].text = action.payload.newText;
     },
   },
 });
 
-export const { addComment, addPlusComment, addMinusComment } =
+export const { addComment, addPlusComment, addMinusComment, updateText } =
   commentSlice.actions;

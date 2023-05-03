@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, ChangeEvent } from "react";
+import { useDispatch } from "react-redux";
+import { updateText } from "../../../../store/slices/comments";
 import type { Comment } from "../../../../models/comment";
 import replyIcon from "../../../../assets/icons/icon-reply.svg";
 import editIcon from "../../../../assets/icons/icon-edit.svg";
@@ -6,10 +8,26 @@ import deleteIcon from "../../../../assets/icons/icon-delete.svg";
 
 interface Props {
   comment: Comment;
+  index: number;
 }
 
-export default function Content({ comment }: Props) {
+export default function Content({ comment, index }: Props) {
+  const dispatch = useDispatch();
+
   const [showFormUpdate, setShowFormUpdate] = useState<boolean>(false);
+
+  const [newText, setNewText] = useState<string>(comment.text);
+
+  const handleTextArea = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setNewText(e.target.value);
+  };
+
+  const handleUpdateText = () => {
+    if (!newText) return;
+
+    dispatch(updateText({ newText, index }));
+    setShowFormUpdate(!showFormUpdate);
+  };
 
   return (
     <div className="flex flex-col gap-5 mb-8 w-full">
@@ -55,13 +73,17 @@ export default function Content({ comment }: Props) {
       ) : (
         <div>
           <textarea
-            value={comment.text}
+            value={newText}
+            onChange={handleTextArea}
             className="border resize-none py-2 px-5 rounded-md w-full focus:outline-none"
             rows={5}
             placeholder="Add a comment..."
           ></textarea>
           <div className="flex gap-5">
-            <button className="rounded-md bg-principal py-2 px-6 text-white">
+            <button
+              onClick={handleUpdateText}
+              className="rounded-md bg-principal py-2 px-6 text-white"
+            >
               Update
             </button>
             <button
