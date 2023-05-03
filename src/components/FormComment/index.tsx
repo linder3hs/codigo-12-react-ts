@@ -18,10 +18,11 @@ export default function FormComment() {
 
     dispatch(
       addComment({
-        avatar: "",
-        created_at: new Date(),
+        avatar:
+          "https://static.vecteezy.com/system/resources/previews/002/275/847/original/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg",
         text,
         username: "linder3hs",
+        counter: 0,
       })
     );
 
