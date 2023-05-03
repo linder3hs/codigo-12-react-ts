@@ -29,8 +29,8 @@ export default function FormComment() {
   };
 
   return (
-    <>
-      <div className="bg-white w-2/4 m-auto mb-12 rounded-md flex justify-center gap-10 p-6">
+    <div className="pb-10">
+      <div className="bg-white rounded-md flex gap-10 p-6">
         <div>
           <img className="h-10" src={avatar} alt="" />
         </div>
@@ -52,6 +52,6 @@ export default function FormComment() {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }

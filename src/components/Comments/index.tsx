@@ -10,7 +10,7 @@ export default function Comments() {
   const { comments } = useSelector((state: RootState) => state.comments);
 
   return (
-    <div className="w-2/4 m-auto pb-10">
+    <div className="pb-10">
       {comments.length > 0 &&
         comments.map((comment: Comment) => (
           <div className="bg-white mt-10 p-6 rounded-md">
